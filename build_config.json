@@ -1,0 +1,22 @@
+{
+  "packages": {
+    "windsurf": {
+      "url": "https://windsurf-stable.codeiumdata.com/linux-x64/stable/b195fa8f6708b2d32692f64ba2809ad303f79173/Windsurf-linux-x64-1.2.5.tar.gz",
+      "name": "1.94.0",
+      "version": "b195fa8f6708b2d32692f64ba2809ad303f79173",
+      "productVersion": "1.94.0",
+      "hash": "10adb10502e07fdc36657f04133db2d89fc0e037",
+      "timestamp": 1738368643,
+      "sha256hash": "8c8417f4da07dc24d287c83afd1a81fa087fc347bd8fc807d537c26ef2aa3",
+      "supportsFastUpdate": true,
+      "windsurfVersion": "1.2.5"
+      }
+  },
+  "build_tags": ["latest", "kasm-arch"],
+  "base_image": "lscr.io/linuxserver/webtop:arch-kde",
+  "environment": {
+    "NODE_ENV": "production"
+  },
+  "dependencies": [],
+  "scripts": {}
+}

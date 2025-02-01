@@ -1,3 +1,5 @@
 run/*
 *.env
 !example.env
+latest.json
+temp.json
