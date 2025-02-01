@@ -1,0 +1,18 @@
+---
+services:
+  homelab-webtop:
+    build: .
+    container_name: webtop
+    hostname: webtop
+    security_opt:
+      - seccomp:unconfined #optional
+    env_file:
+      - .env
+    volumes:
+      - run/config:/config
+      #- /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 3000:3000 # Kasm HTTP
+    devices:
+      - /dev/dri:/dev/dri
+    #restart: unless-stopped
