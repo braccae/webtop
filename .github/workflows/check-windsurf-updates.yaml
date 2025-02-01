@@ -1,0 +1,25 @@
+name: Check Windsurf Updates
+on:
+  schedule:
+    - cron: '0 12 * * *' # Daily at 12pm UTC
+  workflow_dispatch:
+
+jobs:
+
+  update:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Run script
+      run: python3 .github/scripts/check-windsurf-updates.py
+
+
+    - name: Commit and push changes
+      if: env.UPDATE_AVAILABLE == 'true'
+      run: |
+        git config --global user.name 'github-actions'
+        git config --global user.email 'github-actions@github.com'
+        git add build_config.json
+        git commit -m 'Update windsurf to ${{ env.WINDSURF_VERSION }}'
+        git push
